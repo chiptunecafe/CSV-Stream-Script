@@ -140,9 +140,9 @@ while True:
 	elif commands[0] in command_dict and len(commands) == 1:
 		command_dict[commands[0]](sContainer)
 	elif  commands[0] in command_dict and len(commands) == 2:
-		if isinstance(commands[1],int):
+		try:
 			command_dict[commands[0]](sContainer,int(commands[1]))
-		else:
+		except:
 			print("Malformatted arguement")
 	else:
 		print("incorrect command\n"+HELPTEXT)
