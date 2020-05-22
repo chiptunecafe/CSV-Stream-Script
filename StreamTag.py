@@ -6,7 +6,7 @@
 import csv,sys
 
 #File paths
-CSV_PATHS = ["cat1.csv"]#ordered categories col1 = songName, col2 = ArtistName
+CSV_PATHS = ["cat1.csv","cat2.csv","cat3.csv"]#ordered categories col1 = songName, col2 = ArtistName
 OUTPUT_ARTIST_PATH = "CurrentArtist.txt"
 OUTPUT_SONG_PATH = "CurrentSong.txt"
 #text
@@ -23,6 +23,8 @@ jumpTo [entry num]- jump to num entry in current category
 current - display current song
 category [category num] - change to category
 exit - exit script
+
+nums are indexed at zero
 '''
 
 class SongContainer():
@@ -46,7 +48,7 @@ class SongContainer():
 		else:
 			print("**WARNING: position {} out of range".format(pos))
 	def changeCategory(self,cat):
-		if 0 < cat < len(self.categories) - 1:
+		if 0 <= cat <= len(self.categories) - 1:
 			self.currentCat = cat
 			self.currentEntry = 0
 		else:
@@ -92,7 +94,7 @@ def jumpTo(sContainer,arg):
 	current(sContainer)
 	
 def changeCategory(sContainer,arg):
-	sContainer.jumpTo(arg)
+	sContainer.changeCategory(arg)
 	updateSong(sContainer)
 	current(sContainer)
 	
