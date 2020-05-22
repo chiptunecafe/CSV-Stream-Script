@@ -145,5 +145,5 @@ while True:
 		except:
 			print("Malformatted arguement")
 	else:
-		print("incorrect command\n"+HELPTEXT)
+		print("incorrect command\nType 'help' for listing of commands\n")
 		
