@@ -135,10 +135,15 @@ current(sContainer)
 while True:
 	commands = input("> ").split()
 	#sorry about this mess
-	if commands[0] in command_dict and len(commands) == 1:
+	if len(commands) == 0:
+		continue
+	elif commands[0] in command_dict and len(commands) == 1:
 		command_dict[commands[0]](sContainer)
 	elif  commands[0] in command_dict and len(commands) == 2:
-		command_dict[commands[0]](sContainer,int(commands[1]))
+		if isinstance(commands[1],int):
+			command_dict[commands[0]](sContainer,int(commands[1]))
+		else:
+			print("Malformatted arguement")
 	else:
 		print("incorrect command\n"+HELPTEXT)
 		
