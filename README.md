@@ -7,4 +7,4 @@ simple and quick script for diplaying song information in OBS during chiptune ca
 3. run StreamTag.py
 
 ### issues
-not finished 
+
