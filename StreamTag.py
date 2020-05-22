@@ -103,15 +103,15 @@ def helpS(sContainer):
 	print(HELPTEXT)
 	
 def updateSong(sContainer):
-	f = open(OUTPUT_SONG_PATH,'r+')
+	f = open(OUTPUT_SONG_PATH,'w+')
 	f.truncate(0)
 	f.write(sContainer.getCurrentSongName())
 	f.close
-	f = open(OUTPUT_ARTIST_PATH,'r+')
+	f = open(OUTPUT_ARTIST_PATH,'w+')
 	f.truncate(0)
 	f.write(sContainer.getCurrentSongArist())
 	f.close
-	print("Now Playing : {} - {}".format(songname,artist))
+
 
 #command dict & func pointers
 command_dict = {
