@@ -10,4 +10,4 @@ Python3
 3. run StreamTag.py
 
 ### issues
-
+- Malformatted command handling
